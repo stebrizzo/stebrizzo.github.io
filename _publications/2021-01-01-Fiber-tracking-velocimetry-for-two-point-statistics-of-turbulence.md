@@ -2,7 +2,8 @@
 title: "Fiber tracking velocimetry for two-point statistics of turbulence"
 collection: publications
 category: manuscripts
-permalink: /publication/2021-01-01-Fiber-tracking-velocimetry-for-two-point-statistics-of-turbulence
+authors: "Stefano Brizzolara, Marco Edoardo Rosti, Stefano Olivieri, Luca Brandt, Markus Holzner, Andrea Mazzino"
+venue: "Physical Review X"
 date: 2021-01-01
-venue: 'Physical Review X'
+permalink: /publication/2021-01-01-Fiber-tracking-velocimetry-for-two-point-statistics-of-turbulence
 ---

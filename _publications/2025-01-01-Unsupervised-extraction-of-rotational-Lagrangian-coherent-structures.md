@@ -2,7 +2,8 @@
 title: "Unsupervised extraction of rotational Lagrangian coherent structures"
 collection: publications
 category: manuscripts
-permalink: /publication/2025-01-01-Unsupervised-extraction-of-rotational-Lagrangian-coherent-structures
+authors: "Marius M Neamtu-Halic, Stefano Brizzolara, George Haller, Markus Holzner"
+venue: "Computers & Fluids"
 date: 2025-01-01
-venue: 'Computers &amp; Fluids'
+permalink: /publication/2025-01-01-Unsupervised-extraction-of-rotational-Lagrangian-coherent-structures
 ---

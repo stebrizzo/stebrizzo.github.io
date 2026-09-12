@@ -2,7 +2,8 @@
 title: "Universal alignment in turbulent pair dispersion"
 collection: publications
 category: manuscripts
-permalink: /publication/2023-01-01-Universal-alignment-in-turbulent-pair-dispersion
+authors: "Ron Shnapp, Stefano Brizzolara, Marius M Neamtu-Halic, Alessandro Gambino, Markus Holzner"
+venue: "Nature Communications"
 date: 2023-01-01
-venue: 'Nature Communications'
+permalink: /publication/2023-01-01-Universal-alignment-in-turbulent-pair-dispersion
 ---

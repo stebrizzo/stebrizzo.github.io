@@ -2,7 +2,8 @@
 title: "Impact of heteroaggregation between microplastics and algae on particle vertical transport"
 collection: publications
 category: manuscripts
-permalink: /publication/2024-01-01-Impact-of-heteroaggregation-between-microplastics-and-algae-on-particle-vertical-transport
+authors: "Francesco Parrella, Stefano Brizzolara, Markus Holzner, Denise M Mitrano"
+venue: "Nature water"
 date: 2024-01-01
-venue: 'Nature water'
+permalink: /publication/2024-01-01-Impact-of-heteroaggregation-between-microplastics-and-algae-on-particle-vertical-transport
 ---

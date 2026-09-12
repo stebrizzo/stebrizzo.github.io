@@ -2,7 +2,8 @@
 title: "Rigid fibre transport in a periodic non-homogeneous geophysical turbulent flow"
 collection: publications
 category: manuscripts
-permalink: /publication/2025-01-01-Rigid-fibre-transport-in-a-periodic-non-homogeneous-geophysical-turbulent-flow
+authors: "Annalisa De Leo, Stefano Brizzolara, Mattia Cavaiola, Junlin He, Alessandro Stocchino"
+venue: "Journal of Fluid Mechanics"
 date: 2025-01-01
-venue: 'Journal of Fluid Mechanics'
+permalink: /publication/2025-01-01-Rigid-fibre-transport-in-a-periodic-non-homogeneous-geophysical-turbulent-flow
 ---
