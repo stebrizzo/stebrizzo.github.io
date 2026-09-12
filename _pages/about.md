@@ -7,9 +7,10 @@ redirect_from:
   - /about.html
 ---
 
-I am Stefano Brizzolara, a postdoctoral researcher at [Princeton University](https://www.princeton.edu/). Here, supported by the Postdoc.Mobility Fellowship of the Swiss National Science Foundation, I work with Prof. [Luc Deike](https://ldeike.princeton.edu/) and Prof. [Michelle DiBenedetto](https://www.michellediben.com/) in the [Mechanical and Aerospace Engineering Department](https://mae.princeton.edu/). Before I was a Marie Curie fellow at [IST Austria](https://ista.ac.at/en/home/) and a Ph.D. student at the [Institute of Environmental Engineering](https://ifu.ethz.ch/) at [ETH Zürich](https://ethz.ch/).
+A data-driven personal website
+======
 
-You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+I am Stefano Brizzolara, a postdoctoral researcher at [Princeton University](https://www.princeton.edu/). Here, supported by the Postdoc.Mobility Fellowship of the Swiss National Science Foundation, I work with Prof. [Luc Deike](https://ldeike.princeton.edu/) and Prof. [Michelle DiBenedetto](https://www.michellediben.com/) in the [Mechanical and Aerospace Engineering Department](https://mae.princeton.edu/). Before I was a Marie Curie fellow at [IST Austria](https://ista.ac.at/en/home/) and a Ph.D. student at the [Institute of Environmental Engineering](https://ifu.ethz.ch/) at [ETH Zürich](https://ethz.ch/).
 
 A data-driven personal website
 ======
