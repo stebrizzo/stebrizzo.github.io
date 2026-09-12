@@ -1,0 +1,45 @@
+name: Generate publications from BibTeX
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "markdown_generator/pubs.bib"
+      - "markdown_generator/pubsFromBib.py"
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pybtex
+
+      - name: Generate publication files
+        run: |
+          mkdir -p _publications
+          cd markdown_generator
+          python pubsFromBib.py
+
+      - name: Commit generated publications
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _publications
+          if git diff --cached --quiet; then
+            echo "No publication changes."
+          else
+            git commit -m "Generate publications from BibTeX"
+            git push
+          fi
