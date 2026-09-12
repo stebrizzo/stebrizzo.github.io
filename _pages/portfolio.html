@@ -9,32 +9,40 @@ author_profile: true
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
   margin-top: 2rem;
 }
 
 .gallery-item {
   margin: 0;
+  min-width: 0;
 }
 
-.gallery-item img {
+.gallery-image {
+  display: block;
   width: 100%;
-  height: auto;
-  border-radius: 4px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
 }
 
 .gallery-caption {
   font-size: 0.85rem;
   color: #666;
-  margin-top: 6px;
-  line-height: 1.3;
+  margin-top: 7px;
+  line-height: 1.35;
 }
 
 @media (max-width: 900px) {
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -50,7 +58,9 @@ author_profile: true
 <div class="gallery-grid">
 
   <div class="gallery-item">
-    <a href="{{ '/images/gallery/bursting.gif' | relative_url }}" target="_blank">
+    <a class="gallery-image"
+       href="{{ '/images/gallery/bursting.gif' | relative_url }}"
+       target="_blank">
       <img src="{{ '/images/gallery/bursting.gif' | relative_url }}"
            alt="Bursting bubble over a microfiber suspension">
     </a>
@@ -59,8 +69,11 @@ author_profile: true
     </div>
   </div>
 
+
   <div class="gallery-item">
-    <a href="{{ '/images/gallery/fibEjection.gif' | relative_url }}" target="_blank">
+    <a class="gallery-image"
+       href="{{ '/images/gallery/fibEjection.gif' | relative_url }}"
+       target="_blank">
       <img src="{{ '/images/gallery/fibEjection.gif' | relative_url }}"
            alt="Jet-drop ejection of microfibers">
     </a>
@@ -69,20 +82,26 @@ author_profile: true
     </div>
   </div>
 
-    <div class="gallery-item">
-    <a href="{{ '/images/gallery/copepodReaction.gif' | relative_url }}" target="_blank">
+
+  <div class="gallery-item">
+    <a class="gallery-image"
+       href="{{ '/images/gallery/copepodReaction.gif' | relative_url }}"
+       target="_blank">
       <img src="{{ '/images/gallery/copepodReaction.gif' | relative_url }}"
-           alt="Jet-drop ejection of microfibers">
+           alt="Copepod reacting to suction">
     </a>
     <div class="gallery-caption">
-      A copepod reacts to a needle suction.
+      A copepod reacts to needle suction.
     </div>
-      
   </div>
-      <div class="gallery-item">
-    <a href="{{ '/images/gallery/scalar3d.gif' | relative_url }}" target="_blank">
+
+
+  <div class="gallery-item">
+    <a class="gallery-image"
+       href="{{ '/images/gallery/scalar3d.gif' | relative_url }}"
+       target="_blank">
       <img src="{{ '/images/gallery/scalar3d.gif' | relative_url }}"
-           alt="Jet-drop ejection of microfibers">
+           alt="Three-dimensional scalar field">
     </a>
     <div class="gallery-caption">
       Scalar field measured with scanning laser-induced fluorescence.
