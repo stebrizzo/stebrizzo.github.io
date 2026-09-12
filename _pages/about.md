@@ -7,12 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-A data-driven personal website
-======
-
 I am Stefano Brizzolara, a postdoctoral researcher at [Princeton University](https://www.princeton.edu/). Here, supported by the Postdoc.Mobility Fellowship of the Swiss National Science Foundation, I work with Prof. [Luc Deike](https://ldeike.princeton.edu/) and Prof. [Michelle DiBenedetto](https://www.michellediben.com/) in the [Mechanical and Aerospace Engineering Department](https://mae.princeton.edu/). Before I was a Marie Curie fellow at [IST Austria](https://ista.ac.at/en/home/) and a Ph.D. student at the [Institute of Environmental Engineering](https://ifu.ethz.ch/) at [ETH Zürich](https://ethz.ch/).
 
-A data-driven personal website
+Research
 ======
 Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
 
