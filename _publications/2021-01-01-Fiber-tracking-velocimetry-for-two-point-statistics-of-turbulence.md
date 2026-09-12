@@ -6,4 +6,3 @@ permalink: /publication/2021-01-01-Fiber-tracking-velocimetry-for-two-point-stat
 date: 2021-01-01
 venue: 'Physical Review X'
 ---
-Use [Google Scholar](https://scholar.google.com/scholar?q=Fiber+tracking+velocimetry+for+two+point+statistics+of+turbulence){:target="_blank"} for full citation

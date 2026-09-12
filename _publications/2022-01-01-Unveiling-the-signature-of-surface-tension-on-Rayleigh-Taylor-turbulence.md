@@ -6,4 +6,3 @@ permalink: /publication/2022-01-01-Unveiling-the-signature-of-surface-tension-on
 date: 2022-01-01
 venue: 'In the proceedings of 75th Annual Meeting of the Division of Fluid Dynamics'
 ---
-Use [Google Scholar](https://scholar.google.com/scholar?q=Unveiling+the+signature+of+surface+tension+on+Rayleigh+Taylor+turbulence){:target="_blank"} for full citation
