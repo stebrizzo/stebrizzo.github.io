@@ -25,7 +25,7 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Stefano Brizzolara"
-  pronouns         : # example: "she/her"  
+  # pronouns         : # example: "she/her"  
   bio              : "SNF postdoc.mobility fellow"
   location         : "Princeton, NJ, USA"
   employer         : "Princeton Universityy"
@@ -48,39 +48,39 @@ author:
 
 
   # Repositories and software development
-  bitbucket        : # Username - Update with your username on the site
-  codepen          : # Username
-  dribbble         : # Username
-  github           : "academicpages"
-  kaggle           : # Username  
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
+  # bitbucket        : # Username - Update with your username on the site
+  # codepen          : # Username
+  # dribbble         : # Username
+  github           : "https://github.com/stebrizzo"
+  # kaggle           : # Username  
+  # stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
-  facebook         : # Username
-  flickr           : # Username
-  foursquare       : # Username
-  goodreads        : # Username
-  google_plus      : # Username
-  keybase          : # Username
-  instagram        : # Username
-  lastfm           : # Username
-  linkedin         : # Username
-  mastodon         : # URL
-  medium           : # URL
-  pinterest        : # Username
-  soundcloud       : # Username
-  steam            : # Username
-  telegram         : # URL
-  tumblr           : # Username
-  twitter          : # Username for X / Twitter
-  vine             : # Username
-  weibo            : # Username
-  wikipedia        : # Username
-  xing             : # Username
-  youtube          : # Username
-  zhihu            : # Username
+  # artstation       : # Username
+  # bluesky          : "bsky.app" # Replace this with you Bluesky username
+  #facebook         : # Username
+  #flickr           : # Username
+  #foursquare       : # Username
+  #goodreads        : # Username
+  #google_plus      : # Username
+  #keybase          : # Username
+  #instagram        : # Username
+  #lastfm           : # Username
+  linkedin         : "https://www.linkedin.com/in/stefano-brizzolara-6a8501198/"
+  #mastodon         : # URL
+  #medium           : # URL
+  #pinterest        : # Username
+  #soundcloud       : # Username
+  #steam            : # Username
+  #telegram         : # URL
+  #tumblr           : # Username
+  #twitter          : # Username for X / Twitter
+  #vine             : # Username
+  #weibo            : # Username
+  #wikipedia        : # Username
+  #xing             : # Username
+  youtube          : "https://www.youtube.com/@stefanobrizzolara3244"
+  #zhihu            : # Username
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
