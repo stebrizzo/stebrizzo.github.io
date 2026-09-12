@@ -11,4 +11,4 @@ I am Stefano Brizzolara, a postdoctoral researcher at [Princeton University](htt
 
 Research
 ======
-I am a researcher in fluid mechanics. I combine experiments and theory to understand turbulence, multiphase flows, and particle transport. I am generally interested in how turbulence structures and in how it affect interfaces, dispersion, fragmentation of particles, and swimming animals behavior. My experimental expertise includes three-dimensional flow measurements and complex-shaped particle reconstruction.
+I am a researcher in fluid mechanics. I combine experiments and theory to understand turbulence, multiphase flows, and particle transport. I am generally interested in how turbulence is structured and how it affects interfaces, dispersion, particle fragmentation, and swimming animals' behavior. My expertise includes three-dimensional flow measurements and complex-shaped particle reconstruction.
