@@ -24,27 +24,27 @@ repository               : "stebrizzo/stebrizzo.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Stefano Brizzolara"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "SNF postdoc.mobility fellow"
+  location         : "Princeton, NJ, USA"
+  employer         : "Princeton Universityy"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "s.brizzolara@princeton.edu" 
 
   # Academic websites
-  academia         : # URL
-  arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-  inspire-hep      : # URL
-  impactstory      : # URL
-  orcid            : "https://orcid.org/yourorcidurl"
-  semantic         : # URL
-  ssrn             : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : # URL
-  scopus           : # URL
-  zotero           : # URL
+  academia         : "https://mae.princeton.edu/people/stefano-brizzolara"
+  # arxiv            : # URL - Update with the correct link to your profile
+  googlescholar    : "https://scholar.google.com/citations?user=ekaFU6wAAAAJ&hl=en"
+  # inspire-hep      : # URL
+  # impactstory      : # URL
+  orcid            : "https://orcid.org/0000-0002-4616-5033"
+  # semantic         : # URL
+  # ssrn             : # URL
+  # pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  researchgate     : "https://www.researchgate.net/profile/Stefano-Brizzolara-3"
+  # scopus           : # URL
+  # zotero           : # URL
 
 
   # Repositories and software development
