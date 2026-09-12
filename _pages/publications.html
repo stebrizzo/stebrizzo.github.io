@@ -5,32 +5,175 @@ permalink: /publications/
 author_profile: true
 ---
 
+<style>
+
+.publication-section {
+  margin-top: 2rem;
+}
+
+.publication-section h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.publication-item {
+  margin-bottom: 1.5rem;
+}
+
+.publication-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 0.15rem;
+}
+
+.publication-title a {
+  text-decoration: none;
+}
+
+.publication-title a:hover {
+  text-decoration: underline;
+}
+
+.publication-authors {
+  font-size: 0.90rem;
+  line-height: 1.4;
+  color: #555;
+  margin-bottom: 0.1rem;
+}
+
+.publication-venue {
+  font-size: 0.90rem;
+  line-height: 1.4;
+  color: #777;
+}
+
+</style>
+
+
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+  <div class="wordwrap">
+    You can also find my articles on
+    <a href="{{ site.author.googlescholar }}" target="_blank">
+      my Google Scholar profile
+    </a>.
+  </div>
 {% endif %}
 
-{% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
+{% assign sorted_publications = site.publications | sort: "date" | reverse %}
+
+
 {% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
+
+  {% for category in site.publication_category %}
+
+    {% assign category_has_publications = false %}
+
+    {% for post in sorted_publications %}
+      {% if post.category == category[0] %}
+        {% assign category_has_publications = true %}
       {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
     {% endfor %}
+
+    {% if category_has_publications %}
+
+      <div class="publication-section">
+
+        <h2>{{ category[1].title }}</h2>
+
+        {% for post in sorted_publications %}
+
+          {% if post.category == category[0] %}
+
+            <div class="publication-item">
+
+              <div class="publication-title">
+                {% if post.paperurl %}
+                  <a href="{{ post.paperurl }}" target="_blank">
+                    {{ post.title }}
+                  </a>
+                {% else %}
+                  {{ post.title }}
+                {% endif %}
+              </div>
+
+              {% if post.authors %}
+                <div class="publication-authors">
+                  {{ post.authors }}
+                </div>
+              {% endif %}
+
+              <div class="publication-venue">
+
+                {% if post.venue %}
+                  <em>{{ post.venue }}</em>
+                {% endif %}
+
+                {% if post.date %}
+                  {% if post.venue %}, {% endif %}
+                  {{ post.date | date: "%Y" }}
+                {% endif %}
+
+              </div>
+
+            </div>
+
+          {% endif %}
+
+        {% endfor %}
+
+      </div>
+
+    {% endif %}
+
   {% endfor %}
+
+
 {% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+
+  <div class="publication-section">
+
+    {% for post in sorted_publications %}
+
+      <div class="publication-item">
+
+        <div class="publication-title">
+          {% if post.paperurl %}
+            <a href="{{ post.paperurl }}" target="_blank">
+              {{ post.title }}
+            </a>
+          {% else %}
+            {{ post.title }}
+          {% endif %}
+        </div>
+
+        {% if post.authors %}
+          <div class="publication-authors">
+            {{ post.authors }}
+          </div>
+        {% endif %}
+
+        <div class="publication-venue">
+
+          {% if post.venue %}
+            <em>{{ post.venue }}</em>
+          {% endif %}
+
+          {% if post.date %}
+            {% if post.venue %}, {% endif %}
+            {{ post.date | date: "%Y" }}
+          {% endif %}
+
+        </div>
+
+      </div>
+
+    {% endfor %}
+
+  </div>
+
 {% endif %}
-
-
-
