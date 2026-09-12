@@ -3,7 +3,6 @@
 
 from pybtex.database.input import bibtex
 from time import strptime
-import html
 import os
 import re
 
@@ -40,6 +39,10 @@ publist = {
 }
 
 
+# ---------------------------------------------------------------------
+# HTML escaping
+# ---------------------------------------------------------------------
+
 html_escape_table = {
     "&": "&amp;",
     '"': "&quot;",
@@ -48,22 +51,29 @@ html_escape_table = {
 
 
 def html_escape(text):
-    """Produce HTML entities within text."""
+    """Replace characters that may cause problems in generated HTML/YAML."""
     return "".join(html_escape_table.get(c, c) for c in text)
 
 
-# Make sure the output directory exists
+# ---------------------------------------------------------------------
+# Ensure output directory exists
+# ---------------------------------------------------------------------
+
 os.makedirs("../_publications", exist_ok=True)
 
+
+# ---------------------------------------------------------------------
+# Process BibTeX files
+# ---------------------------------------------------------------------
 
 for pubsource in publist:
 
     parser = bibtex.Parser()
     bibdata = parser.parse_file(publist[pubsource]["file"])
 
-    # Loop through individual references
     for bib_id in bibdata.entries:
 
+        # Default date if month/day are not supplied
         pub_year = "1900"
         pub_month = "01"
         pub_day = "01"
@@ -71,71 +81,61 @@ for pubsource in publist:
         b = bibdata.entries[bib_id].fields
 
         try:
-            pub_year = f'{b["year"]}'
+            # ---------------------------------------------------------
+            # Publication date
+            # ---------------------------------------------------------
 
-            # Month
-            if "month" in b.keys():
-                if len(b["month"]) < 3:
-                    pub_month = "0" + b["month"]
-                    pub_month = pub_month[-2:]
+            pub_year = str(b["year"])
+
+            if "month" in b:
+                month_value = str(b["month"]).strip()
+
+                # Numeric month
+                if month_value.isdigit():
+                    pub_month = month_value.zfill(2)
+
+                # Text month, e.g. Jan, January
                 else:
                     try:
-                        tmnth = strptime(b["month"][:3], "%b").tm_mon
-                        pub_month = "{:02d}".format(tmnth)
+                        tmnth = strptime(month_value[:3], "%b").tm_mon
+                        pub_month = f"{tmnth:02d}"
                     except ValueError:
-                        pub_month = str(b["month"])
+                        pub_month = "01"
 
-            # Day
-            if "day" in b.keys():
+            if "day" in b:
                 pub_day = str(b["day"]).zfill(2)
 
-            pub_date = pub_year + "-" + pub_month + "-" + pub_day
+            pub_date = f"{pub_year}-{pub_month}-{pub_day}"
 
-            # Clean title for filename / URL
-            clean_title = (
+            # ---------------------------------------------------------
+            # Clean title
+            # ---------------------------------------------------------
+
+            title = (
                 b["title"]
                 .replace("{", "")
                 .replace("}", "")
                 .replace("\\", "")
-                .replace(" ", "-")
             )
 
-            url_slug = re.sub(r"\[.*\]|[^a-zA-Z0-9_-]", "", clean_title)
-            url_slug = url_slug.replace("--", "-")
+            # Title used for filename/permalink
+            clean_title = title.replace(" ", "-")
 
-            md_filename = (
-                str(pub_date) + "-" + url_slug + ".md"
-            ).replace("--", "-")
-
-            html_filename = (
-                str(pub_date) + "-" + url_slug
-            ).replace("--", "-")
-
-            # ---------------------------------------------------------
-            # Build citation
-            # ---------------------------------------------------------
-
-            citation = ""
-
-            for author in bibdata.entries[bib_id].persons["author"]:
-                citation += (
-                    " "
-                    + author.first_names[0]
-                    + " "
-                    + author.last_names[0]
-                    + ", "
-                )
-
-            citation += (
-                "\""
-                + html_escape(
-                    b["title"]
-                    .replace("{", "")
-                    .replace("}", "")
-                    .replace("\\", "")
-                )
-                + ".\""
+            url_slug = re.sub(
+                r"\[.*\]|[^a-zA-Z0-9_-]",
+                "",
+                clean_title
             )
+
+            # Remove repeated hyphens
+            url_slug = re.sub(r"-+", "-", url_slug).strip("-")
+
+            md_filename = f"{pub_date}-{url_slug}.md"
+            html_filename = f"{pub_date}-{url_slug}"
+
+            # ---------------------------------------------------------
+            # Venue
+            # ---------------------------------------------------------
 
             venue = (
                 publist[pubsource]["venue-pretext"]
@@ -145,103 +145,112 @@ for pubsource in publist:
                 .replace("\\", "")
             )
 
-            citation += " " + html_escape(venue)
-            citation += ", " + pub_year + "."
-
             # ---------------------------------------------------------
             # YAML front matter
             # ---------------------------------------------------------
 
-            md = (
-                "---\n"
-                + 'title: "'
-                + html_escape(
-                    b["title"]
-                    .replace("{", "")
-                    .replace("}", "")
-                    .replace("\\", "")
-                )
-                + '"\n'
-            )
+            md = "---\n"
+
+            md += 'title: "' + html_escape(title) + '"\n'
 
             md += (
                 "collection: "
                 + publist[pubsource]["collection"]["name"]
+                + "\n"
             )
 
-            # THIS IS THE IMPORTANT LINE
             md += (
-                "\ncategory: "
+                "category: "
                 + publist[pubsource]["category"]
+                + "\n"
             )
 
             md += (
-                "\npermalink: "
+                "permalink: "
                 + publist[pubsource]["collection"]["permalink"]
                 + html_filename
+                + "\n"
             )
 
+            # Optional note
             note = False
 
-            if "note" in b.keys():
-                if len(str(b["note"])) > 5:
+            if "note" in b:
+                if len(str(b["note"]).strip()) > 0:
                     md += (
-                        "\nexcerpt: '"
-                        + html_escape(b["note"])
-                        + "'"
+                        "excerpt: '"
+                        + html_escape(str(b["note"]).strip())
+                        + "'\n"
                     )
                     note = True
 
-            md += "\ndate: " + str(pub_date)
+            md += "date: " + pub_date + "\n"
 
-            md += "\nvenue: '" + html_escape(venue) + "'"
+            md += (
+                "venue: '"
+                + html_escape(venue)
+                + "'\n"
+            )
 
+            # Optional paper URL
             url = False
 
-            if "url" in b.keys():
-                if len(str(b["url"])) > 5:
-                    md += "\npaperurl: '" + b["url"] + "'"
+            if "url" in b:
+                paper_url = str(b["url"]).strip()
+
+                if len(paper_url) > 0:
+                    md += (
+                        "paperurl: '"
+                        + paper_url
+                        + "'\n"
+                    )
                     url = True
 
-
-            md += "\n---"
+            md += "---\n"
 
             # ---------------------------------------------------------
-            # Individual publication page
+            # Individual publication page content
             # ---------------------------------------------------------
 
             if note:
-                md += "\n" + html_escape(b["note"]) + "\n"
+                md += "\n" + html_escape(str(b["note"]).strip()) + "\n"
 
             if url:
                 md += (
                     "\n[Access paper here]("
-                    + b["url"]
+                    + paper_url
                     + '){:target="_blank"}\n'
                 )
 
+            # ---------------------------------------------------------
+            # Write Markdown file
+            # ---------------------------------------------------------
+
             md_filename = os.path.basename(md_filename)
 
-            with open(
-                "../_publications/" + md_filename,
-                "w",
-                encoding="utf-8"
-            ) as f:
+            output_path = os.path.join(
+                "../_publications",
+                md_filename
+            )
+
+            with open(output_path, "w", encoding="utf-8") as f:
                 f.write(md)
 
             print(
-                f'SUCCESSFULLY PARSED {bib_id}: "',
-                b["title"][:60],
-                "..." * (len(b["title"]) > 60),
-                '"'
+                f'SUCCESSFULLY PARSED {bib_id}: '
+                f'"{title[:60]}'
+                f'{"..." if len(title) > 60 else ""}"'
             )
 
         except KeyError as e:
+
+            title_for_warning = b.get("title", "")
+
             print(
                 f'WARNING Missing Expected Field {e} '
-                f'from entry {bib_id}: "',
-                b.get("title", "")[:30],
-                "..." * (len(b.get("title", "")) > 30),
-                '"'
+                f'from entry {bib_id}: '
+                f'"{title_for_warning[:30]}'
+                f'{"..." if len(title_for_warning) > 30 else ""}"'
             )
+
             continue
