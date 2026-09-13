@@ -130,7 +130,7 @@ redirect_from:
   <div class="cv-entry-description">
     M.Sc. in Civil and Environmental Engineering, specialization in Environmental Hydraulics.
     Dissertation: <em>Fiber Tracking Velocimetry</em>.
-    Degree mark: 110/110 cum Laude.
+    Degree mark: 110/110 cum Laude. Supervisors: Prof. Markus Holzner and Prof. Andrea Mazzino.
   </div>
 
 </div>
@@ -150,7 +150,7 @@ redirect_from:
   <div class="cv-entry-description">
     B.Sc. in Civil and Environmental Engineering.
     Dissertation: <em>Coastal vulnerability assessment to inundation for Lalzit Bay, Albania</em>.
-    Degree mark: 110/110.
+    Degree mark: 110/110. Supervisor: Prof. Giovanni Besio.
   </div>
 
 </div>
