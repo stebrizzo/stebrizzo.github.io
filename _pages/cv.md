@@ -22,11 +22,6 @@ redirect_from:
   border-bottom: 1px solid #e5e5e5;
 }
 
-
-
-
-/* Education and employment entries */
-
 .cv-entry {
   margin-bottom: 1.4rem;
 }
@@ -62,19 +57,7 @@ redirect_from:
   margin-top: 0.3rem;
 }
 
-
-/* Mobile formatting */
-
 @media (max-width: 650px) {
-
-  .cv-info {
-    grid-template-columns: 1fr;
-    row-gap: 0.1rem;
-  }
-
-  .cv-info-label {
-    margin-top: 0.5rem;
-  }
 
   .cv-entry-header {
     display: block;
@@ -86,53 +69,6 @@ redirect_from:
 }
 
 </style>
-
-
-<div class="cv-section">
-
-<h2>Personal Information</h2>
-
-<div class="cv-info">
-
-  <div class="cv-info-label">Name</div>
-  <div>Stefano Brizzolara</div>
-
-  <div class="cv-info-label">Affiliation</div>
-  <div>Princeton University</div>
-
-  <div class="cv-info-label">Address</div>
-  <div>1 Nassau Hall, Princeton, New Jersey 08544</div>
-
-  <div class="cv-info-label">Date of birth</div>
-  <div>August 9, 1994</div>
-
-  <div class="cv-info-label">Nationality</div>
-  <div>Italian</div>
-
-  <div class="cv-info-label">ORCID</div>
-  <div>
-    <a href="https://orcid.org/0000-0002-4616-5033" target="_blank">
-      0000-0002-4616-5033
-    </a>
-  </div>
-
-  <div class="cv-info-label">Academic website</div>
-  <div>
-    <a href="https://mae.princeton.edu/people/stefano-brizzolara" target="_blank">
-      Princeton MAE personal page
-    </a>
-  </div>
-
-  <div class="cv-info-label">Online publication list</div>
-  <div>
-    <a href="https://scholar.google.com/citations?user=ekaFU6wAAAAJ&hl=it" target="_blank">
-      Google Scholar profile
-    </a>
-  </div>
-
-</div>
-
-</div>
 
 
 <div class="cv-section">
