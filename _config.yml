@@ -23,7 +23,7 @@ repository               : "stebrizzo/stebrizzo.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile1.jpg"
   name             : "Stefano Brizzolara"
   # pronouns         : # example: "she/her"  
   bio              : "SNF postdoc.mobility fellow"
