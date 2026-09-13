@@ -23,19 +23,6 @@ redirect_from:
 }
 
 
-/* Personal information */
-
-.cv-info {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  column-gap: 20px;
-  row-gap: 0.45rem;
-  font-size: 0.95rem;
-}
-
-.cv-info-label {
-  font-weight: 600;
-}
 
 
 /* Education and employment entries */
