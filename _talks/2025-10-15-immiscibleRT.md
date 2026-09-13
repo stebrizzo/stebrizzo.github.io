@@ -4,7 +4,7 @@ collection: talks
 type: "Talk"
 permalink: /talks/2012-03-01-talk-1
 venue: "Water Webinars"
-date: 2025-15-10
+date: 2025-10-15
 location: "KNTU, online"
 ---
 
