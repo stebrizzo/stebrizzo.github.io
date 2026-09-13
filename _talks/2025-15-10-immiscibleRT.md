@@ -1,5 +1,5 @@
 ---
-title: "Immiscible Rayleigh-Taylor turbulence: implication for bacterial degradation in oil spills"
+title: "Immiscible Rayleigh-Taylor turbulence: implications for bacterial degradation in oil spills"
 collection: talks
 type: "Talk"
 permalink: /talks/2012-03-01-talk-1
